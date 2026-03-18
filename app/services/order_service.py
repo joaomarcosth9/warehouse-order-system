@@ -43,7 +43,7 @@ class OrderService:
         )
 
         # In a real implementation, prices would be fetched from a product catalog or similar service
-        items = [
+        order_items = [
             OrderItem(product_id=item.product_id, quantity=item.quantity, price=10.0)
             for item in items
         ]
@@ -52,7 +52,7 @@ class OrderService:
             id=OrderId(str(uuid4())),
             customer_id=customer_id,
             shipping_address=shipping_address,
-            items=items,
+            items=order_items,
             status="created",
         )
 
